@@ -18,10 +18,27 @@ cd Library-Management-System-with-SQL-Backend
 ```
 
 ### 2️⃣ Configure the Database  
-- Import the provided **SQL schema** into your MySQL database.  
-- Update the database credentials in the **Java code**.  
 
-### 3️⃣ Compile and Run the Program  
+#### Create the Database  
+```sql
+CREATE DATABASE LibraryDB;
+USE LibraryDB;
+```
+
+#### Create the Books Table  
+```sql
+CREATE TABLE books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    available TINYINT(1) DEFAULT 1
+);
+```
+
+### 3️⃣ Update Database Credentials  
+- Open the **Java file** and update the **JDBC URL, username, and password** as per your MySQL setup.  
+
+### 4️⃣ Compile and Run the Program  
 ```sh
 javac LibraryManagement.java
 java LibraryManagement
